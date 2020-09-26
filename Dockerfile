@@ -43,6 +43,7 @@ ENV PATH $PATH:$JAVA_HOME/bin:.
 
 RUN mkdir -p ~/.gradle \
     && echo "org.gradle.daemon=false" >> ~/.gradle/gradle.properties \
+    && echo "runtime group: 'org.apereo.cas', name: 'cas-server-support-rest', version: '6.2.0'" >> ~/.gradle/gradle.properties \
     && ./gradlew clean build --parallel \
     && rm -rf /root/.gradle
 
